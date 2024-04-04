@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>University of Dundee, UK, Scotland</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/static/icon.svg">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+    <link href="{{ url_for('static', path='/index.css') }}" rel="stylesheet">
+</head>
+<body>
+
+<!-- HTML CSS and jQuery Template gotten from https://codepen.io/Bhagya686/pen/ZEWxyPd -->
+
+<div class="chatbot_container">
+    <div style="position : fixed; bottom: 5px; right: 0px; z-index:9999"> <!--Begin Chatbot Code-->
+        <div id="chatBox" class="uod_chatbot closed animate__animated animate__heartbeat">
+            <div class="contact bar" onclick="openChatBox()">
+
+                <div class="pic icon"></div>
+                <span id="online-status"></span>
+                <div class="name">
+                    ChatBot
+                </div>
+                <div class="seen">
+                    Just Now
+
+                </div>
+            </div>
+            <div id="closeButton" style="position: absolute; top: 2rem; right: 2rem;" onclick="closeChatBox()">
+                <i class="fas fa-times"></i>
+            </div>
+
+
+            <div class="messages" id="chat">
+                <div class="message box" id="initial-message">
+                    Hi there! How can I help you?
+                </div>
+            </div>
+
+            <div class="input">
+                <input type="file" id="real-file" hidden="hidden" name="file" accept="image/*"
+                       onchange="previewImage();"/>
+                <!--<i class="fas fa-paperclip" id="custom-button"></i>-->
+
+                <!-- <input id="Query" placeholder="Type your message here!" type="text" autocomplete="off" name="msg-txt" />-->
+                <input id="Query" placeholder="Type your message here!" type="text" autocomplete="off"
+                       name="msg-txt"
+                       onkeyup="changeIcon('micIcon')"/>
+                <i class="fas fa-microphone" onclick="iconFunction()" id="micIcon"></i>
+                {#                <!--<i class="fas fa-paper-plane" id="send"></i>-->#}
+                <audio id="audioPlayer" controls style="display: none;"></audio>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!--closed container-->
+</body>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="{{ url_for('static', path='/index.js') }}"></script>
+</html>
