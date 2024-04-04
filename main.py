@@ -10,7 +10,6 @@ import os
 from dotenv import load_dotenv
 from transcribe import synthesize_text
 from transcribe import speechtotext
-# from text import textinput
 
 # To run this program in the terminal run "uvicorn main:app --reload"
 # I added the requirement.txt file but to shorten it install openai, fastapi, uvicorn, assemblyai, google-cloud-texttospeech and jinja2
