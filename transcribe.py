@@ -12,9 +12,6 @@ load_dotenv()
 ASSEMBLYAI_API_KEY = os.environ.get("ASSEMBLYAI_API_KEY")
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = 'my-project-402913-fa265bd29f95.json'
 
-
-# aai.settings.api_key = "d8d6f486ea2243bdbe4e91f0577b4232"
-# os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = 'my-project-402913-fa265bd29f95.json'
 client = texttospeech.TextToSpeechClient()
 
 class TranscriptionRequest(BaseModel):
